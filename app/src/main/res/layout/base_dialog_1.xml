@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center">
+    <!-- 必需要加外面这个框且在DialogFragment::onCreateView()中修改背景透明和在DialogFragment::onStart()中修改窗口为全屏，
+         否则弹出对话框动画的效果是对话框只在自身大小的区域内活动且超出区域部分不显示，
+         加了外面这个框且为全屏则其内容（实际对话框可见区域）动画活动时无被遮蔽情况 -->
+
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:id="@+id/linear_background"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:background="@mipmap/qiang"
+            android:gravity="center_horizontal"
+            android:orientation="vertical"
+            android:paddingBottom="23.33dp"
+            android:paddingLeft="23.33dp"
+            android:paddingRight="23.33dp"
+            android:paddingTop="23.33dp">
+
+            <LinearLayout
+                style="@style/dialog_icon"
+                android:background="@drawable/rect_line_red">
+
+                <ImageView
+                    android:id="@+id/image_icon"
+                    android:scaleType="centerCrop"
+                    android:layout_margin="2.5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
+
+            </LinearLayout>
+
+
+            <TextView
+                android:id="@+id/text_title"
+                style="@style/dialog_title"
+                android:text="开始一个会话！"
+                android:visibility="gone" />
+
+            <TextView
+                android:id="@+id/text_content"
+                style="@style/dialog_message"
+                android:text="I am content" />
+
+            <Button
+                android:id="@+id/button_ok"
+                android:layout_width="126dp"
+                android:layout_height="30dp"
+                android:layout_gravity="bottom|center_horizontal"
+                android:layout_marginTop="123.33dp"
+                android:background="@mipmap/go"
+                android:text="这就来"
+                android:textColor="#764e39"
+                android:textSize="16.67sp" />
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/iv_dess"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="15dp"
+            android:layout_marginTop="15dp"
+            android:src="@mipmap/diss" />
+    </RelativeLayout>
+
+</RelativeLayout>

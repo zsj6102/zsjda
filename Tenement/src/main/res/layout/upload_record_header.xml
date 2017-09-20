@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_gre_bg"
+    android:orientation="vertical">
+
+
+    <com.property.colpencil.colpencilandroidlibrary.Ui.MyScrollview
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="none">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white"
+            android:orientation="vertical">
+
+            <LinearLayout style="@style/UploadHeaderLinearStyle">
+
+                <TextView style="@style/UploadHeaderTimeTvStyle" />
+
+                <TextView
+                    android:id="@+id/tv_time"
+                    style="@style/UploadHeaderTimeStyle" />
+
+                <Button
+                    android:id="@+id/btn_get_time"
+                    android:visibility="gone"
+                    style="@style/UploadHeaderGetButtonStyle" />
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_eeeeee" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                >
+
+                <TextView style="@style/UploadHeaderAddTvStyle"
+                    android:layout_marginTop="10dp"
+                    android:id="@+id/tv"
+                    android:layout_marginBottom="10dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/tv_loaction"
+                    android:text="正在获取位置中。。。"
+                    android:layout_marginBottom="10dp"
+                    android:layout_alignTop="@+id/tv"
+                    android:layout_toRightOf="@+id/tv"
+                    android:textColor="@color/text_drak1"
+                    android:layout_toEndOf="@+id/tv" />
+
+                <Button
+                    android:visibility="gone"
+                    android:id="@+id/btn_get_loaction"
+                    style="@style/UploadHeaderGetButtonStyle" />
+
+            </RelativeLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="@color/color_eeeeee" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="10dp"
+                android:background="@color/main_gre_bg" />
+
+            <TextView style="@style/UploadHeaderConditionTvStyle" />
+
+            <EditText
+                android:id="@+id/et_work_task"
+                style="@style/UploadHeaderEditTextStyle" />
+
+            <com.property.colpencil.colpencilandroidlibrary.Ui.ColpencilGridView
+                android:layout_width="match_parent"
+                android:id="@+id/gl_add"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="12dp"
+                android:layout_marginRight="12dp"
+                android:numColumns="4"
+                android:columnWidth="10dp"
+                android:layout_marginTop="10dp"></com.property.colpencil.colpencilandroidlibrary.Ui.ColpencilGridView>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="15dp"
+                android:text="温馨提示：图片最多可上传3张"
+                android:textColor="@color/text_drak3"
+                android:textSize="12sp" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:layout_marginTop="15dp"
+                android:background="@color/color_eeeeee" />
+
+
+            <Button
+                android:id="@+id/btn_upload"
+                android:layout_width="match_parent"
+                android:layout_height="44dp"
+                android:layout_marginBottom="40dp"
+                android:layout_marginLeft="15dp"
+                android:layout_marginRight="15dp"
+                android:layout_marginTop="43dp"
+                android:background="@color/mian_blue"
+                android:text="上传工作记录"
+                android:textColor="@color/white"
+                android:textSize="18sp" />
+        </LinearLayout>
+    </com.property.colpencil.colpencilandroidlibrary.Ui.MyScrollview>
+
+</LinearLayout>

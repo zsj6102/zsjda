@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <LinearLayout style="@style/CleanRecordItemParentStyle">
+
+        <TextView
+            android:id="@+id/item_greenclean_village"
+            style="@style/CleanRecordItemAddressStyle"
+            android:layout_marginTop="5dp"
+            android:layout_marginLeft="15dp"/>
+
+        <LinearLayout style="@style/CleanRecordItemLinearStyle">
+
+            <!--<TextView style="@style/CleanRecordItemTimetvStyle" />-->
+
+            <TextView
+                android:id="@+id/tv_time"
+                style="@style/CleanRecordItemTimeStyle" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            style="@style/CleanRecordItemLinearStyle">
+            <TextView
+                style="@style/CleanRecordItemAddressTvStyle" />
+            <com.colpencil.tenement.Ui.AdaptableTextView
+                android:id="@+id/item_greenclean_address"
+                style="@style/CleanRecordItemAddressStyle"
+                />
+        </LinearLayout>
+
+
+        <LinearLayout
+            style="@style/CleanRecordItemLinearStyle">
+            <TextView
+                style="@style/CleanRecordItemWorkTaskTvStyle" />
+            <com.colpencil.tenement.Ui.AdaptableTextView
+                android:id="@+id/item_greenclean_task"
+                android:layout_marginBottom="10dp"
+                style="@style/CleanRecordItemTaskStyle" />
+        </LinearLayout>
+
+
+        <com.property.colpencil.colpencilandroidlibrary.Ui.ColpencilGridView
+            android:id="@+id/item_greenclean_gridview"
+            style="@style/CleanRecordItemGridViewStyle" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="20dp"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btn_change"
+                android:layout_width="150dp"
+                android:layout_height="40dp"
+                android:gravity="center"
+                android:background="@drawable/rect_blue"
+                android:text="去修改"
+                android:textColor="@color/white"
+                android:textSize="@dimen/text_size15" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

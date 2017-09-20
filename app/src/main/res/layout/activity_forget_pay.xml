@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_toolbar" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="12dp"
+            android:textColor="@color/text_dark66"
+            android:textSize="14sp" />
+
+        <TextView
+            android:id="@+id/tv_get"
+            android:layout_width="80dp"
+            android:layout_height="30dp"
+            android:layout_marginBottom="15dp"
+            android:layout_marginLeft="10dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/rect_blue"
+            android:gravity="center"
+            android:text="获取验证码"
+            android:textColor="@color/white"
+            android:textSize="14sp" />
+
+    </LinearLayout>
+
+    <com.colpencil.propertycloud.Ui.CheckNumView
+        android:id="@+id/password_view"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginLeft="12dp"
+        android:layout_marginRight="12dp"
+        android:cursorVisible="false"
+        android:inputType="number"
+        android:maxLength="6"
+        android:textSize="12sp"
+        app:pivBorderColor="@color/divide_line1"
+        app:pivBorderRadius="2dp"
+        app:pivBorderWidth="0.5dp"
+        app:pivPasswordColor="@color/text_dark66"
+        app:pivPasswordLength="6"
+        app:pivPasswordWidth="10dp" />
+
+</LinearLayout>

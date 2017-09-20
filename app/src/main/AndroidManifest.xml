@@ -1,0 +1,596 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.colpencil.propertycloud">
+
+    <!-- 以后每申明一个权限，都要给这个权限做说明 -->
+    <!-- 写入sd卡的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 读取sd卡的权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--连接网络的权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--杀死后台进程的权限-->
+    <uses-permission android:name="permission.KILL_BACKGROUND_PROCESSES" />
+    <!--系统弹出的权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!--系统设置-->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!--语音录入-->
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+
+    <!--下面开门的权限-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+
+    <!-- Required -->
+    <permission
+        android:name="com.colpencil.propertycloud.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+
+    <!-- Required  一些系统要求的权限，如访问网络等-->
+    <uses-permission android:name="com.colpencil.propertycloud.permission.JPUSH_MESSAGE" />
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+
+
+    <!-- Optional for location -->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" /> <!-- 用于开启 debug 版本的应用在6.0 系统上 层叠窗口权限 -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CHANGE_CONFIGURATION"></uses-permission>
+
+    <uses-feature
+        android:name="android.hardware.bluetooth_le"
+        android:required="false" />
+
+
+    <application
+        android:name="com.colpencil.propertycloud.Overall.CluodApplaction"
+        android:allowBackup="true"
+        android:hardwareAccelerated="false"
+        android:icon="@mipmap/colpencil"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+
+        <!-- Required  . Enable it you can get statistics data with channel -->
+        <meta-data
+            android:name="JPUSH_CHANNEL"
+            android:value="developer-default" />
+        <meta-data
+            android:name="JPUSH_APPKEY"
+            android:value="e4770dfd099bfe237fcb28d1" /> <!--  </>值来自开发者平台取得的AppKey-->
+
+        <!--友盟统计-->
+        <meta-data
+            android:name="UMENG_APPKEY"
+            android:value="58573872677baa6c1d00066f" />
+        <meta-data
+            android:name="UMENG_CHANNEL"
+            android:value="360zhushou" />
+
+        <!-- 以下是应用程序中的所有activity，凡是申明activity的，都需要加上相应的注释 -->
+
+
+        <!-- Rich push 核心功能 since 2.0.6-->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:exported="false"
+            android:theme="@style/MyDialogStyle"></activity>
+
+        <!-- Required SDK核心功能-->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:exported="false"
+            android:theme="@android:style/Theme.NoTitleBar">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="com.colpencil.propertycloud" />
+            </intent-filter>
+        </activity>
+
+        <!-- 应用程序主页 -->
+        <activity
+            android:name=".View.Activitys.HomeActivity"
+            android:screenOrientation="portrait"></activity>
+        <!-- 用于初始化的启动页 -->
+        <activity
+            android:name=".View.Activitys.Welcome.SplashActivity"
+            android:launchMode="singleTop"
+            android:screenOrientation="portrait"
+            android:theme="@style/SplashTheme">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <activity android:name=".View.Activitys.kindergarten.BabyMineLiveActivity"
+            android:theme="@android:style/Theme.NoTitleBar.Fullscreen"
+            android:screenOrientation="sensor"/>
+
+        <activity
+            android:name=".View.Activitys.HomeActivity2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+
+        <!--引导页-->
+        <activity
+            android:name=".View.Activitys.Welcome.GuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Splash.Fullscreen"></activity>
+
+        <!-- 下面是测试框架用的activity -->
+        <activity
+            android:name=".View.Activitys.Test.TestMvpActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--测试权限的activity-->
+        <activity
+            android:name=".View.Activitys.Test.SecondActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--测试底部栏的界面-->
+        <activity
+            android:name="com.colpencil.propertycloud.View.Activitys.Test.TestBottomActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--登陆界面-->
+        <!--注册界面-->
+        <activity
+            android:name=".View.Activitys.Welcome.RegisterActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--物业投诉-->
+        <activity
+            android:name=".View.Activitys.Home.ComplaintActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--历史投诉-->
+        <activity
+            android:name=".View.Activitys.Home.ComplaintHistroyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--意见反馈-->
+        <activity
+            android:name=".View.Activitys.Home.FeedbackActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--物业缴费-->
+        <activity
+            android:name=".View.Activitys.Home.PayFeesActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--缴费列表-->
+        <activity
+            android:name=".View.Activitys.Home.PayListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--缴费历史-->
+        <activity
+            android:name=".View.Activitys.Home.PayHistroyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--确认缴费-->
+        <activity
+            android:name=".View.Activitys.Home.PaySureActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--订单支付-->
+        <activity
+            android:name=".Present.Home.OrderPayActivity"
+            android:configChanges="orientation|keyboardHidden|navigation"
+            android:exported="false"
+            android:screenOrientation="behind"
+            android:windowSoftInputMode="adjustResize|stateHidden"></activity>
+        <!--我的装修-->
+        <activity
+            android:name=".View.Activitys.Home.MyFitmentActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--阅读界面-->
+        <activity
+            android:name=".View.Activitys.Home.ReadActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--材料管理-->
+        <activity
+            android:name=".View.Activitys.Home.MaterialManagementActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--签字界面-->
+        <activity
+            android:name=".View.Activitys.Home.SignatureActivity"
+            android:configChanges="screenSize|keyboardHidden|orientation|layoutDirection"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--我的订单-->
+        <activity
+            android:name=".View.Activitys.CloseManager.MyOrderActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--小区选择-->
+        <activity
+            android:name=".View.Activitys.Home.VilageSelectActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--物业报修-->
+        <activity
+            android:name=".View.Activitys.CloseManager.TenementRepairsActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--修改联系电话-->
+        <activity
+            android:name=".View.Activitys.CloseManager.ChangePhoneActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--填写上面服务地址-->
+        <activity
+            android:name=".View.Activitys.CloseManager.ChangeAdressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--我的资料-->
+        <activity
+            android:name=".View.Activitys.CloseManager.MineActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"></activity>
+        <!--实名认证-->
+        <activity
+            android:name=".View.Activitys.CloseManager.RealNameAuthenticationActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--预览已经选择的图片-->
+        <activity
+            android:name="com.lzy.imagepicker.ui.ImagePreviewDelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImagePickerThemeFullScreen"
+            android:windowSoftInputMode="adjustPan" />
+        <!--居住情况-->
+        <activity
+            android:name=".View.Activitys.CloseManager.LiveInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--成员管理-->
+        <activity
+            android:name=".View.Activitys.CloseManager.MemberManagerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--添加成员-->
+        <activity
+            android:name=".View.Activitys.CloseManager.AddMemberActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--更改信息-->
+        <activity
+            android:name=".View.Activitys.CloseManager.ChangeMineInfoActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--报修历史-->
+        <activity
+            android:name=".View.Activitys.Home.RepairsHistoryActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--广告网页加载-->
+        <activity
+            android:name=".View.Activitys.Home.LoadUriActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--修改/忘记密码-->
+        <activity
+            android:name=".View.Activitys.Welcome.ChangePwdActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--添加装修人员登记-->
+        <activity
+            android:name=".View.Activitys.Home.AddRegistryFormActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--装修人员登记列表-->
+        <activity
+            android:name=".View.Activitys.Home.RegistryFormListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--装修申请表-->
+        <activity
+            android:name=".View.Activitys.Home.DecorateApplyActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--家庭成员列表-->
+        <activity
+            android:name=".View.Activitys.CloseManager.MenberManagerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--添加家庭成员的之前的验证-->
+        <activity
+            android:name=".View.Activitys.CloseManager.AddMemberBeforeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--装修助手首页-->
+        <activity
+            android:name=".View.Activitys.Home.FitmentHomeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.SelectCityActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.Welcome.LoginActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <!--装修进度-->
+        <activity
+            android:name=".View.Activitys.Home.FitmentProcessActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--物业意见-->
+        <activity
+            android:name=".View.Activitys.Home.AdviceListActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--全屏广告界面-->
+        <activity
+            android:name=".View.Activitys.Home.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <!--设置界面-->
+        <activity
+            android:name=".View.Activitys.CloseManager.SettingActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.ChangeMobileActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.RepairDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.ScanCodeActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.Welcome.CityPickerActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.Welcome.CityPickersActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.NewFeedBackActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.SelectSexActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.ComplainDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.SelectCitesActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.SelectEstateActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".Tools.PhotoPreview.PhotoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+        <activity
+            android:name=".View.Activitys.ApiCloudActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustResize"></activity>
+        <activity
+            android:name=".View.Activitys.Home.AdviceDetailActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.OpenDoor.OpenDoorActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.Common.ImagePreviewActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.FitmentProcessActivity2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.WalletActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.BalanceActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.ChangePayActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.ForgetPayActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.ChangePayActivity2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.Home.ScanpayActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.Home.PayActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.CouponActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.TranUserActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.TransferActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+        <activity
+            android:name=".View.Activitys.CloseManager.MaterProgressActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.ChecKStatueActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.PayFeesSelectActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.CloseManager.NationSelectActivity"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan"></activity>
+        <activity
+            android:name=".View.Activitys.Home.OrderPayActivity2"
+            android:screenOrientation="portrait"
+            android:windowSoftInputMode="adjustPan" />
+
+        <service android:name=".Service.LocationService" />
+
+        <service android:name="com.amap.api.location.APSService"></service>
+        <!--高德地图的key-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="c0ed5d181095e88add8fdf93a35cef07" />
+
+        <!--极光推送的-->
+        <!-- Required  SDK核心功能-->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false"></service>
+
+        <!-- Required SDK 核心功能-->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:process=":mult">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="com.colpencil.propertycloud" />
+            </intent-filter>
+
+        </service>
+
+        <!-- Required SDK核心功能-->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />   <!--Required  显示通知栏 -->
+                <category android:name="com.colpencil.propertycloud" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+
+        <!-- Required SDK核心功能-->
+        <receiver
+            android:name="cn.jpush.android.service.AlarmReceiver"
+            android:exported="false" />
+
+        <receiver
+            android:name="com.colpencil.propertycloud.Receiver.MyPushReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <!--Required 用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!--Required 用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!--Required 用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!--Required 用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <category android:name="com.colpencil.propertycloud" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.colpencil.propertycloud.Receiver.LLingResultReceiver">
+            <intent-filter>
+                <action android:name="com.example.lling.act.LLING_KEY_TIME_SOON_VERIFY_WARN" />
+                <action android:name="com.example.lling.act.LLING_KEY_FORMAT_ERROR" />
+                <action android:name="com.example.lling.act.LLING_KEY_TIME_VERIFY_ERROR" />
+                <action android:name="com.example.lling.act.LLING_KEY_ACCOUNT_VERIFY_ERROR" />
+            </intent-filter>
+        </receiver>
+
+        <service
+            android:name="com.izhihuicheng.api.lling.LLingOpenDoorService"
+            android:process=".OPENDOOR">
+            <intent-filter>
+                <action android:name="com.izhihuicheng.api.lling.ACT_OPENDOOR" />
+                <action android:name="com.izhihuicheng.api.lling.ACT_OPENDOOR_LOAD" />
+            </intent-filter>
+        </service>
+    </application>
+
+</manifest>

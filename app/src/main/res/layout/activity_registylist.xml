@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_toolbar" />
+
+    <RelativeLayout
+        android:id="@+id/ll_show"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <ListView
+            android:id="@+id/regsit_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"></ListView>
+
+        <include layout="@layout/loading_view_layout" />
+
+        <include layout="@layout/empty_view_layout" />
+
+        <include layout="@layout/error_view_layout" />
+    </RelativeLayout>
+
+
+    <TextView
+        android:id="@+id/tv_ok"
+        android:layout_width="match_parent"
+        android:layout_height="49dp"
+        android:layout_gravity="bottom"
+        android:background="@color/main_blue"
+        android:gravity="center"
+        android:text="继续添加"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text15sp" />
+</LinearLayout>

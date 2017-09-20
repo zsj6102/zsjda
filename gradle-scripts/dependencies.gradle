@@ -1,0 +1,170 @@
+ext {
+
+    //Version
+    supportVersion = '23.2.1'
+    junitVersion = '4.12'
+    fastjsonVersion = '1.1.46.android'
+    butterknifeVersion = '7.0.1'
+    toolsfinalVersion = '1.1.5'
+    rxandroidVersion = '1.1.0'
+    rxjavaVersion = '1.1.0'
+    materializeVersion = '0.2.7@aar'
+    retrofitVersion = '2.1.0'
+    statusbaruitlVersion = '1.2.5'
+    andfixVersion = "0.4.0@aar"
+    nineoldandroidsVersion = '2.4.0'
+    topsnackbarVersion = '0.0.8'
+    okhttpVersion = '3.4.1'
+    leakcanaryVersion = '1.4-beta2'
+    draggerVersion = '2.4'
+    annotationVersion = '10.0-b28'
+    glideVersion = '3.7.0'
+    bgaBannerVersion = '2.0.9'
+    bgaAdapterVersion = '1.0.8@aar'
+    cardviewVersion = '23.2.1'
+    greendaoVersion = '2.1.0'
+    persistentCookieJarVersion = 'v0.9.3'
+    materialDialogsVersion = '0.9.0.1'
+    superadapterVersion = '3.6.2'
+    bgabadgeview = '1.1.3'
+    timeselectorVersion = '1.1.3+'
+    circleimageviewVersion = '2.1.0'
+    sweetalertVersion = '1.3'
+
+    //Packages
+//    android向下兼容包
+    supportPackage = 'com.android.support'
+    junitPackage = 'junit'
+//    fastjson
+    fastjsonPackage = 'com.alibaba'
+//    依赖注解
+    butterknifePackage = 'com.jakewharton'
+//    一些常用的开发工具
+    toolsfinalPackage = 'cn.finalteam'
+//    rxjava相关
+    rxandroidPackage = 'io.reactivex'
+    rxjavaPackage = 'io.reactivex'
+//    材料设计相关
+    materializePackage = 'com.mikepenz'
+//    retrofit网络框架相关
+    retrofitPackage = 'com.squareup.retrofit2'
+//    状态栏相关
+    statusbaruitlPackage = 'com.jaeger.statusbaruitl'
+//    android热修复
+    andfixPackage = 'com.alipay.euler'
+//    动画兼容库
+    nineoldandroidsPackage = 'com.nineoldandroids'
+//    顶部的snackbar
+    topsnackbarPackage = 'com.androidadvance'
+//    okhttp相关
+    okhttpPackage = 'com.squareup.okhttp3'
+//    内存溢出相关
+    leakcanaryPackage = 'com.squareup.leakcanary'
+//    依赖注入
+    dragger2Package = 'com.google.dagger'
+//    注解
+    annotationPackage = 'org.glassfish'
+//    图片加载glide
+    glidePackage = 'com.github.bumptech.glide'
+//    轮播
+    bgaBannerPackage = 'cn.bingoogolapple'
+//    下拉刷新适配器
+    bgaAdapterPackage = 'cn.bingoogolapple'
+//    android卡片
+    cardviewPackage = 'com.android.support'
+//    数据库查询
+    greendaoPackage = 'de.greenrobot'
+//    cookie持久化
+    persistentCookieJarPackage = 'com.github.franmontiel'
+//    材料设计的对话框
+    materialDialogsPackage = 'com.afollestad.material-dialogs'
+//    万能适配器
+    superadapterPackage = 'org.byteam.superadapter'
+    //时间选择器
+    timeselectorPackage = 'com.feezu.liuli'
+    //圆角头像
+    circleimageviewPackage = 'de.hdodenhof'
+    //  效果不错的对话框
+    sweetalertPackage = 'cn.pedant.sweetalert'
+
+    supportDependencies = [
+            appCompat     : buildDependency(supportPackage, 'appcompat-v7', supportVersion),
+            design        : buildDependency(supportPackage, 'design', supportVersion),
+            supportV4     : buildDependency(supportPackage, 'support-v4', supportVersion),
+            recyclerviewV7: buildDependency(supportPackage, 'recyclerview-v7', supportVersion),
+
+    ]
+
+    testingDependencies = [
+            junit: buildDependency(junitPackage, 'junit', junitVersion),
+    ]
+
+    rxDependencies = [
+            rxandroid: buildDependency(rxandroidPackage, 'rxandroid', rxandroidVersion),
+            rxjava   : buildDependency(rxjavaPackage, 'rxjava', rxjavaVersion)
+    ]
+
+    toolDependencies = [
+            fastjson             : buildDependency(fastjsonPackage, 'fastjson', fastjsonVersion),
+            butterknife          : buildDependency(butterknifePackage, 'butterknife', butterknifeVersion),
+            toolsfinal           : buildDependency(toolsfinalPackage, 'toolsfinal', toolsfinalVersion),
+            materialize          : buildDependency(materializePackage, 'materialize', butterknifeVersion),
+            library              : buildDependency(statusbaruitlPackage, 'library', statusbaruitlVersion),
+            andfix               : buildDependency(andfixPackage, 'andfix', andfixVersion),
+            leakcanaryAndroid    : buildDependency(leakcanaryPackage, 'leakcanary-android', leakcanaryVersion),
+            leakcanaryAndroidNoOp: buildDependency(leakcanaryPackage, 'leakcanary-android-no-op', leakcanaryVersion),
+            dragger2             : buildDependency(dragger2Package, 'dagger', draggerVersion),
+            annotation           : buildDependency(annotationPackage, 'javax.annotation', annotationVersion),
+            greendao             : buildDependency(greendaoPackage, 'greendao', greendaoVersion),
+            core                 : buildDependency(materialDialogsPackage, 'core', materialDialogsVersion),
+            superadapter         : buildDependency(superadapterPackage, 'superadapter', superadapterVersion),
+            timeselector         : buildDependency(timeselectorPackage,'timeselector',timeselectorVersion),
+            circleimageview      : buildDependency(circleimageviewPackage,'circleimageview',circleimageviewVersion),
+            sweetalert          : buildDependency(sweetalertPackage,'library',sweetalertVersion),
+    ]
+
+    retrofitDependencies = [
+            retrofit           : buildDependency(retrofitPackage, 'retrofit', retrofitVersion),
+            adapterRxjava      : buildDependency(retrofitPackage, 'adapter-rxjava', retrofitVersion),
+            converterGson      : buildDependency(retrofitPackage, 'converter-gson', retrofitVersion),
+            PersistentCookieJar: buildDependency(persistentCookieJarPackage, 'PersistentCookieJar', persistentCookieJarVersion),
+    ]
+
+    nineoldandroidsDependencies = [
+            library: buildDependency(nineoldandroidsPackage, 'library', nineoldandroidsVersion),
+
+    ]
+
+    okHttpDependencies = [
+            okhttp            : buildDependency(okhttpPackage, 'okhttp', okhttpVersion),
+            loggingInterceptor: buildDependency(okhttpPackage, 'logging-interceptor', okhttpVersion),
+    ]
+
+    topsnackbarDependencies = [
+            topsnackbar: buildDependency(topsnackbarPackage, 'topsnackbar', topsnackbarVersion),
+    ]
+    glideDependencies = [
+
+            glide: buildDependency(glidePackage, 'glide', glideVersion),
+    ]
+    bgaBannerDependencies = [
+
+            bgaBanner   : buildDependency(bgaBannerPackage, 'bga-banner', bgaBannerVersion),
+            bgabadgeview: buildDependency(bgaBannerPackage, 'bga-badgeview', bgabadgeview),
+    ]
+    bgaAdapterDependencies = [
+
+            bgaAdapter: buildDependency(bgaAdapterPackage, 'bga-adapter', bgaAdapterVersion),
+
+    ]
+    cardviewDependencies = [
+
+            cardview: buildDependency(cardviewPackage, 'cardview-v7', cardviewVersion),
+
+    ]
+}
+
+//通过 这个方法建立连接
+String buildDependency(String pack, String dependency, String version) {
+    return "${pack}:${dependency}:${version}"
+}

@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_gre_bg"
+    android:orientation="vertical">
+
+
+    <include layout="@layout/base_toolbar" />
+
+    <LinearLayout
+        android:id="@+id/ll_show"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="12dp"
+                android:src="@mipmap/loaction" />
+
+            <TextView
+                android:id="@+id/tv_loaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="5dp"
+                android:text="当前定位小区："
+                android:textColor="@color/text_drak2"
+                android:textSize="@dimen/text_size13" />
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/lv_select"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:scrollbars="none" />
+    </LinearLayout>
+
+    <include layout="@layout/loading_view_layout" />
+
+    <include layout="@layout/empty_view_layout" />
+
+    <include layout="@layout/error_view_layout" />
+
+
+</LinearLayout>

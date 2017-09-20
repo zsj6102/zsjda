@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include layout="@layout/base_toolbar"/>
+
+    <EditText
+        android:id="@+id/et_advice"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:layout_marginTop="10dp"
+        android:paddingRight="15dp"
+        android:paddingBottom="15dp"
+        android:background="@color/white"
+        android:gravity="left"
+        android:hint="请输入处理意见"
+        android:paddingLeft="15dp"
+        android:paddingTop="15dp"
+        android:ems="200"
+        android:textColor="@color/text_drak3"
+        android:textSize="@dimen/text_size14" />
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="30dp"
+        android:background="@drawable/rect_blue"
+        android:text="保 存"
+        android:textColor="@color/white"
+        android:textSize="18sp"
+        android:layout_marginRight="30dp"
+        android:layout_marginTop="50dp"/>
+
+</LinearLayout>

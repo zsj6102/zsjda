@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white">
+
+
+    <com.property.colpencil.colpencilandroidlibrary.Ui.NoScrollViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white"
+        />
+
+    <RelativeLayout
+        android:id="@+id/relativeLayout"
+        style="@style/BaseBackground"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:layout_alignBottom="@+id/vp"
+        android:layout_alignParentBottom="true">
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="0.5dp"
+            android:background="@color/line1" />
+
+        <RadioGroup
+            android:id="@+id/rg_group"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_marginRight="100dp"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/rb_home"
+                style="@style/BottomTabStyle"
+                android:checked="true"
+                android:drawableTop="@drawable/tab_workebeach"
+                android:text="工作台"
+                android:textColor="@drawable/tab_workbeach_color"
+                android:textSize="10sp" />
+
+            <RadioButton
+                android:id="@+id/rb_my_course"
+                style="@style/BottomTabStyle"
+                android:drawableTop="@drawable/tab_online_talk"
+                android:text="在线对讲"
+                android:textColor="@drawable/tab_online_color"
+                android:textSize="10sp" />
+
+            <RadioButton
+                android:id="@+id/rb_messge"
+                style="@style/BottomTabStyle"
+                android:checked="false"
+                android:drawableTop="@drawable/tab_today_task"
+                android:text="今日任务"
+                android:textColor="@drawable/tab_todaytask_color"
+                android:textSize="10sp" />
+
+        </RadioGroup>
+
+    </RelativeLayout>
+
+    <ImageView
+        android:id="@+id/iv_open_door"
+        android:layout_width="85dp"
+        android:layout_height="85dp"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="20dp"
+        android:src="@drawable/selector_opendoor" />
+
+</RelativeLayout>

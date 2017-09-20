@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    style="@style/MatchMatch">
+
+    <cn.bingoogolapple.qrcode.zxing.ZXingView
+        android:id="@+id/scancodeView"
+        style="@style/MatchMatch"
+        app:qrcv_animTime="1000"
+        app:qrcv_barCodeTipText="将条码放入框内，即可自动扫描"
+        app:qrcv_barcodeRectHeight="140dp"
+        app:qrcv_borderColor="@color/line1"
+        app:qrcv_borderSize="1dp"
+        app:qrcv_cornerColor="@color/colorPrimaryDark"
+        app:qrcv_cornerLength="20dp"
+        app:qrcv_cornerSize="3dp"
+        app:qrcv_isBarcode="false"
+        app:qrcv_isOnlyDecodeScanBoxArea="true"
+        app:qrcv_isScanLineReverse="true"
+        app:qrcv_isShowDefaultGridScanLineDrawable="true"
+        app:qrcv_isShowDefaultScanLineDrawable="false"
+        app:qrcv_isShowTipBackground="false"
+        app:qrcv_isShowTipTextAsSingleLine="true"
+        app:qrcv_isTipTextBelowRect="true"
+        app:qrcv_maskColor="#33FFFFFF"
+        app:qrcv_qrCodeTipText="将二维码/条码放入框内，即可自动扫描"
+        app:qrcv_rectWidth="160dp"
+        app:qrcv_scanLineColor="@color/colorPrimaryDark"
+        app:qrcv_scanLineMargin="0dp"
+        app:qrcv_scanLineSize="1dp"
+        app:qrcv_tipTextColor="@android:color/white"
+        app:qrcv_tipTextSize="@dimen/text_size14"
+        app:qrcv_toolbarHeight="120dp"
+        app:qrcv_topOffset="90dp" />
+
+    <include layout="@layout/base_toolbar" />
+
+
+    <TextView
+        android:id="@+id/tv_scanLightOpen"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/scancode_open"
+        android:gravity="center"
+        android:text="@string/scanCode_open"
+        android:textColor="@color/white"
+        android:layout_marginTop="450dp"
+        android:textSize="@dimen/text_size18" />
+    <TextView
+        android:id="@+id/tv_scanLightClose"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_centerHorizontal="true"
+        android:background="@mipmap/scancode_open"
+        android:gravity="center"
+        android:text="@string/scanCode_close"
+        android:textColor="@color/white"
+        android:layout_marginTop="450dp"
+        android:visibility="gone"
+        android:textSize="@dimen/text_size18" />
+</RelativeLayout>

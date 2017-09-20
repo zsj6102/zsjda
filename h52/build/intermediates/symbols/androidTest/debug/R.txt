@@ -1,0 +1,4 @@
+int anim slide_left_in 0x7f020000
+int anim slide_left_out 0x7f020001
+int anim slide_right_in 0x7f020002
+int anim slide_right_out 0x7f020003

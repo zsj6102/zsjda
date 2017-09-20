@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#12b7f5</color>
+    <color name="colorPrimaryDark">#12b7f5</color>
+    <color name="colorAccent">#12b7f5</color>
+
+    <color name="gray">#444440</color>
+
+    <!--导航栏-->
+    <color name="color_tab_1">#455C65</color>
+    <color name="color_tab_2">#00886A</color>
+    <color name="color_tab_3">#8B6B62</color>
+    <color name="color_tab_4">#6C4A42</color>
+    <color name="color_tab_5">#F63D2B</color>
+
+    <color name="transparent">#00000000</color>
+    <color name="darkblue">#224ca7</color>
+    <color name="text_darkblue">#366096</color>
+    <color name="text_drak1">#333333</color>
+    <color name="text_drak2">#666666</color>
+    <color name="text_drak3">#999999</color>
+    <color name="text_orange">#ffb008</color>
+
+    <color name="mian_blue">#12b7f5</color>
+
+
+    <color name="main_gre_bg">#f5f5f5</color>
+    <color name="line1">#f5f5f5</color>
+    <color name="line2">#e5e5e5</color>
+    <color name="line3">#eeeeee</color>
+    <color name="line4">#999999</color>
+    <color name="color_e5e5e5">#e5e5e5</color>
+    <color name="color_5dc890">#5dc890</color>
+    <color name="color_eeeeee">#eeeeee</color>
+    <color name="color_cccccc">#cccccc</color>
+    <color name="color_a4a4a4">#a4a4a4</color>
+    <color name="color_ffb008">#ffb008</color>
+    <color name="color_qian_blue">#edfaff</color>
+
+</resources>

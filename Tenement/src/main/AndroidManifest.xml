@@ -1,0 +1,379 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.colpencil.tenement">
+
+    <!-- 以后每申明一个权限，都要给这个权限做说明 -->
+    <!-- 写入sd卡的权限 -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- 读取sd卡的权限 -->
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <!--连接网络的权限-->
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!--杀死后台进程的权限-->
+    <uses-permission android:name="permission.KILL_BACKGROUND_PROCESSES" />
+    <!--系统弹出的权限-->
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <!--系统设置-->
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <!--扫描所需权限-->
+    <uses-permission android:name="android.permission.CAMERA" />
+    <!--手机震动的权限-->
+    <uses-permission android:name="android.permission.VIBRATE" />
+    <!--闪光灯-->
+    <uses-permission android:name="android.permission.FLASHLIGHT" />
+    <!-- 录音 -->
+    <uses-permission android:name="android.permission.RECORD_AUDIO"/>
+    <!--唤醒锁屏-->
+    <uses-permission android:name="android.permission.WAKE_LOCK"/>
+    <!--允许程序访问CellID或WiFi热点来获取粗略的位置-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <!--允许程序获取网络状态-->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!--允许程序访问WiFi网络信息-->
+    <uses-permission android:name="android.permission.ACCESS_WIFI_STATE" />
+    <!--允许程序读写手机状态和身份-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <!--用于进行网络定位-->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    <!--用于访问GPS定位-->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    <!--用于读取手机当前的状态-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE"></uses-permission>
+    <!--写入扩展存储，向扩展卡写入数据，用于写入缓存定位数据-->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+    <!--这个权限用于获取wifi的获取权限，wifi信息会用来进行网络定位-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE"></uses-permission>
+    <!-- 修改音频设置 -->
+    <uses-permission android:name="android.permission.MODIFY_AUDIO_SETTINGS"/>
+    <!-- 访问GMail账户列表 -->
+    <uses-permission android:name="android.permission.GET_ACCOUNTS"/>
+    <!-- 使用证书 -->
+    <uses-permission android:name="android.permission.USE_CREDENTIALS"/>
+    <!-- 管理账户 -->
+    <uses-permission android:name="android.permission.MANAGE_ACCOUNTS"/>
+    <!-- 验证账户 -->
+    <uses-permission android:name="android.permission.AUTHENTICATE_ACCOUNTS"/>
+    <!-- 连续广播（允许一个程序收到广播后快速收到下一个广播） -->
+    <uses-permission android:name="android.permission.BROADCAST_STICKY"/>
+    <!--蓝牙权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+
+    <!--下面是极光推送需要的权限-->
+    <permission
+        android:name="com.colpencil.tenement.permission.JPUSH_MESSAGE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="com.colpencil.tenement.permission.JPUSH_MESSAGE" />
+    <!--广播接收权限-->
+    <uses-permission android:name="android.permission.RECEIVE_USER_PRESENT" />
+    <!--卸载权限-->
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.ACCESS_LOCATION_EXTRA_COMMANDS" />
+    <uses-permission android:name="android.permission.CHANGE_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.GET_TASKS" />
+
+    <application
+        android:name=".Overall.TenementApplication"
+        android:allowBackup="true"
+        android:icon="@mipmap/icon"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:hardwareAccelerated="false"
+        android:theme="@style/AppTheme">
+
+        <!--友盟统计-->
+        <meta-data android:value="58574a92a32511018a0003fb" android:name="UMENG_APPKEY"/>
+        <meta-data android:value="360zhushou" android:name="UMENG_CHANNEL"/>
+
+        <!--高德地图的key-->
+        <meta-data
+            android:name="com.amap.api.v2.apikey"
+            android:value="64c9eb78dbe8bce2c16d1aed2d3b810f" />
+        <!-- 设置环信应用的AppKey -->
+        <meta-data
+            android:name="EASEMOB_APPKEY"
+            android:value="1167160928178321#tenement" />
+
+        <!--极光推送-->
+        <meta-data android:name="JPUSH_CHANNEL" android:value="developer-default"/>
+        <meta-data android:name="JPUSH_APPKEY" android:value="0b9d36f4611222c0e9d1bb5c" />
+
+        <!-- 以下是应用程序中的所有activity，凡是申明activity的，都需要加上相应的注释 -->
+        <!-- 用于初始化的启动页 -->
+        <activity
+            android:name=".View.Activitys.Welcome.SplashActivity"
+            android:theme="@style/SplashTheme">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--引导页-->
+        <activity
+            android:name=".View.Activitys.Welcome.GuideActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppTheme.Splash.Fullscreen"></activity>
+
+        <!-- 应用程序主页 -->
+        <activity android:name=".View.Activitys.HomeActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/AppThemeNotTranslucent" ></activity>
+        <!--第二个样式的主界面-->
+        <activity android:name=".View.Activitys.MainActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--测试热修复-->
+        <activity android:name=".View.Activitys.Welcome.TestHotFix"
+            android:screenOrientation="portrait"></activity>
+        <!--登陆界面-->
+        <activity android:name="com.colpencil.tenement.View.Activitys.Welcome.LoginActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--注册界面-->
+        <activity android:name=".View.Activitys.Welcome.RegistActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--语音通话界面-->
+        <activity android:name=".View.Activitys.OnlineTalk.OnlineTalkActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--设备管理界面-->
+        <activity
+            android:name=".View.Activitys.Workbeach.EquipmentControlActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
+        <!--开始巡检/维修/保养-->
+        <activity
+            android:name=".View.Activitys.Workbeach.StartPolingActivity"
+            android:launchMode="singleTask"
+            android:screenOrientation="portrait"></activity>
+        <!--二维码扫描界面-->
+        <activity
+            android:name=".View.Activitys.Workbeach.ScanCodeActivity"
+            android:theme="@style/ScanCodeAppTheme"
+            android:screenOrientation="portrait"></activity>
+        <!--水电详情-->
+        <activity android:name=".View.Activitys.Workbeach.RecordDetailsActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--开始抄表-->
+        <activity android:name=".View.Activitys.Workbeach.WriteWatermeterActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--客服列表界面-->
+        <activity android:name=".View.Activitys.Workbeach.OnlineListActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--保洁记录-->
+        <activity android:name=".View.Activitys.Workbeach.GreenCleanActivity"
+            android:screenOrientation="portrait"></activity>
+        <!---->
+        <activity android:name=".View.Activitys.Workbeach.CleanRecordActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--上传工作记录-->
+        <activity
+            android:name=".View.Activitys.Workbeach.UpLoadRecordActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"></activity>
+        <!--选择照片之后查看高清图片-->
+        <activity android:name=".View.Activitys.Common.GalleyActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--访客管理-->
+        <activity android:name=".View.Activitys.Workbeach.VisitorActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--访客登记-->
+        <activity android:name=".View.Activitys.Workbeach.VisitorRecodActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--业主报修订单-->
+        <activity android:name=".View.Activitys.Workbeach.OwnerRepairActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--投诉建议-->
+        <activity android:name=".View.Activitys.Workbeach.AdviceActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--小区选择-->
+        <activity android:name=".View.Activitys.Workbeach.SelectActivity"
+            android:screenOrientation="portrait"></activity>
+        <!--预览已经选择的图片-->
+        <activity
+            android:name="com.lzy.imagepicker.ui.ImagePreviewDelActivity"
+            android:screenOrientation="portrait"
+            android:theme="@style/ImagePickerThemeFullScreen" />
+        <!--签到界面-->
+        <activity
+            android:name=".View.Activitys.ToayTask.SignInActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <!--签到详情-->
+        <activity
+            android:name=".View.Activitys.ToayTask.SignDetailActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <!--图片预览界面-->
+        <activity
+            android:name=".View.Activitys.Common.ImagePreviewActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <!--签到签退记录-->
+        <activity
+            android:name=".View.Activitys.ToayTask.SignListActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <!--添加任务-->
+        <activity
+            android:name=".View.Activitys.ToayTask.AddTaskActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <!--修改密码界面-->
+        <activity
+            android:name=".View.Activitys.Welcome.ForgetPwdActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <!--设置界面-->
+        <activity
+            android:name=".View.Activitys.Workbeach.SettingActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <!--意见反馈-->
+        <activity
+            android:name=".View.Activitys.Workbeach.FeedbackActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <!--图片查看-->
+        <activity android:name="com.colpencil.tenement.Tools.PhotoPreview.PhotoActivity"
+            android:screenOrientation="portrait"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar">
+        </activity>
+        <activity android:name=".View.Activitys.Workbeach.WebViewActivity"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <!-- 语音通话 -->
+        <activity
+            android:name="com.colpencil.tenement.View.Activitys.OnlineTalk.VoiceCallActivity"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/nornal_style" >
+        </activity>
+        <!-- 视频通话 -->
+        <activity
+            android:name="com.colpencil.tenement.View.Activitys.OnlineTalk.VideoCallActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="portrait"
+            android:launchMode="singleTask"
+            android:theme="@style/horizontal_slide" >
+        </activity>
+        <activity android:name=".View.Activitys.Workbeach.DoAdviceActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"></activity>
+        <activity android:name=".View.Activitys.Workbeach.NeighborsActivity"
+            android:screenOrientation="portrait" ></activity>
+        <!--指派-->
+        <activity android:name=".View.Activitys.Workbeach.AssignRepairActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!--修改保洁巡逻记录-->
+        <activity android:name=".View.Activitys.Workbeach.ReviseRecordActivity"
+            android:screenOrientation="portrait"></activity>
+
+        <!--下面是极光推送的activity-->
+        <!-- Rich push 核心功能 since 2.0.6-->
+        <activity
+            android:name="cn.jpush.android.ui.PopWinActivity"
+            android:theme="@style/MyDialogStyle"
+            android:exported="false" >
+        </activity>
+        <!-- Required SDK核心功能-->
+        <activity
+            android:name="cn.jpush.android.ui.PushActivity"
+            android:configChanges="orientation|keyboardHidden"
+            android:theme="@android:style/Theme.NoTitleBar"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.ui.PushActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+        </activity>
+
+        <!--下面是所有定义的服务-->
+        <!--声明定位service   高德-->
+        <service android:name="com.amap.api.location.APSService"></service>
+        <!-- 声明SDK所需的service SDK核心功能   环信-->
+        <service android:name="com.easemob.chat.EMChatService"/>
+        <!--极光推送需要的服务-->
+        <service
+            android:name="cn.jpush.android.service.DownloadService"
+            android:enabled="true"
+            android:exported="false" >
+        </service>
+        <!-- Required SDK 核心功能-->
+        <!-- 可配置android:process参数将PushService放在其他进程中 -->
+        <service
+            android:name="cn.jpush.android.service.PushService"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.REGISTER" />
+                <action android:name="cn.jpush.android.intent.REPORT" />
+                <action android:name="cn.jpush.android.intent.PushService" />
+                <action android:name="cn.jpush.android.intent.PUSH_TIME" />
+            </intent-filter>
+        </service>
+        <!-- since 1.8.0 option 可选项。用于同一设备中不同应用的JPush服务相互拉起的功能。 -->
+        <!-- 若不启用该功能可删除该组件，将不拉起其他应用也不能被其他应用拉起 -->
+        <service
+            android:name="cn.jpush.android.service.DaemonService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="cn.jpush.android.intent.DaemonService" />
+                <category android:name="${applicationId}" />
+            </intent-filter>
+
+        </service>
+
+        <!--以下是注册的receiver-->
+        <!-- 声明SDK所需的receiver   环信-->
+        <receiver android:name="com.easemob.chat.EMMonitorReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_REMOVED"/>
+                <data android:scheme="package"/>
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED"/>
+                <action android:name="android.intent.action.USER_PRESENT" />
+            </intent-filter>
+        </receiver>
+        <!--极光推送需要的广播-->
+        <receiver
+            android:name="cn.jpush.android.service.PushReceiver"
+            android:enabled="true"
+            android:exported="false">
+            <intent-filter android:priority="1000">
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED_PROXY" />   <!--Required  显示通知栏 -->
+                <category android:name="${applicationId}" />
+            </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.USER_PRESENT" />
+                <action android:name="android.net.conn.CONNECTIVITY_CHANGE" />
+            </intent-filter>
+            <!-- Optional -->
+            <intent-filter>
+                <action android:name="android.intent.action.PACKAGE_ADDED" />
+                <action android:name="android.intent.action.PACKAGE_REMOVED" />
+                <data android:scheme="package" />
+            </intent-filter>
+        </receiver>
+        <receiver
+            android:name="com.colpencil.tenement.Receiver.MyPushReceiver"
+            android:enabled="true">
+            <intent-filter>
+                <!--Required 用户注册SDK的intent-->
+                <action android:name="cn.jpush.android.intent.REGISTRATION" />
+                <!--Required 用户接收SDK消息的intent-->
+                <action android:name="cn.jpush.android.intent.MESSAGE_RECEIVED" />
+                <!--Required 用户接收SDK通知栏信息的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_RECEIVED" />
+                <!--Required 用户打开自定义通知栏的intent-->
+                <action android:name="cn.jpush.android.intent.NOTIFICATION_OPENED" />
+                <!-- 接收网络变化 连接/断开 since 1.6.3 -->
+                <action android:name="cn.jpush.android.intent.CONNECTION" />
+                <category android:name="com.colpencil.tenement" />
+            </intent-filter>
+        </receiver>
+        <!-- Required SDK核心功能-->
+        <receiver android:name="cn.jpush.android.service.AlarmReceiver" android:exported="false"/>
+    </application>
+
+</manifest>

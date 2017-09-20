@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/rect_whrite">
+
+        <TextView
+            android:id="@+id/tv_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="@dimen/text14sp"
+            android:layout_marginTop="20dp"
+            android:layout_marginRight="24dp"
+            android:layout_marginLeft="24dp"
+            android:text="此功能为认证过后的业主所拥有的功能，请联系物业进行身份认证"
+            android:textColor="@color/text_dark66"/>
+
+        <RelativeLayout
+            android:id="@+id/rl_pro_tel"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="10dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/text_dark66"
+                    android:layout_width="wrap_content"
+                    android:text="物业电话："
+                    android:textSize="@dimen/text14sp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_pro_tel"
+                    android:textColor="@color/main_blue"
+                    android:layout_width="wrap_content"
+                    android:text="0733-52115"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="@dimen/text14sp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/call"/>
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_ke_tel"
+            android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
+            android:layout_marginLeft="24dp"
+            android:layout_marginRight="24dp"
+            android:layout_height="wrap_content">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:textColor="@color/text_dark66"
+                    android:layout_width="wrap_content"
+                    android:text="客服电话："
+                    android:textSize="@dimen/text14sp"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:id="@+id/tv_ke_tel"
+                    android:textColor="@color/main_blue"
+                    android:layout_width="wrap_content"
+                    android:text="0733-52115"
+                    android:layout_marginLeft="10dp"
+                    android:textSize="@dimen/text14sp"
+                    android:layout_height="wrap_content" />
+            </LinearLayout>
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:src="@mipmap/call"/>
+
+        </RelativeLayout>
+        
+        <TextView
+            android:id="@+id/tv_know"
+            android:layout_width="match_parent"
+            android:layout_height="44dp"
+            android:text="我知道了"
+            android:gravity="center"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/warn_rect"
+            android:textColor="@color/white"
+            android:textSize="15sp"/>
+    </LinearLayout>
+
+</LinearLayout>

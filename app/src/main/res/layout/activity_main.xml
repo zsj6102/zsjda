@@ -1,0 +1,65 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/white"
+    android:orientation="vertical">
+
+    <com.property.colpencil.colpencilandroidlibrary.Ui.NoScrollViewPager
+        android:id="@+id/vp"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:background="@color/white" />
+
+    <RadioGroup
+        android:id="@+id/rg_group"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@mipmap/biaoqianlan"
+        android:orientation="horizontal">
+
+        <RadioButton
+            android:id="@+id/rb_home"
+            style="@style/BottomTabStyle"
+            android:checked="true"
+            android:drawableTop="@drawable/btn_tab_home_selector"
+            android:text="首页"
+            android:textColor="@drawable/btn_tab_text_selector"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:id="@+id/rb_life"
+            style="@style/BottomTabStyle"
+            android:drawableTop="@drawable/btn_tab_life_selector"
+            android:text="发现好货"
+            android:checked="false"
+            android:textColor="@drawable/btn_tab_text_selector"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:id="@+id/rb_main"
+            style="@style/BottomTabStyleMain"
+            android:drawableTop="@mipmap/kaimen"
+            android:gravity="center"
+            android:textColor="@drawable/btn_tab_text_selector" />
+
+        <RadioButton
+            android:id="@+id/rb_lin"
+            style="@style/BottomTabStyle"
+            android:checked="false"
+            android:drawableTop="@drawable/btn_tab_linli_selector"
+            android:text=" 邻里圈 "
+            android:textColor="@drawable/btn_tab_text_selector"
+            android:textSize="10sp" />
+
+        <RadioButton
+            android:id="@+id/rb_wuye"
+            style="@style/BottomTabStyle"
+            android:drawableTop="@drawable/btn_tab_guanjia_selector"
+            android:text="贴心管家"
+            android:textColor="@drawable/btn_tab_text_selector"
+            android:textSize="10sp" />
+    </RadioGroup>
+
+
+</LinearLayout>

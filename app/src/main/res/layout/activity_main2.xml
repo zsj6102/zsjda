@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="48dp"
+        android:background="@color/white" />
+
+
+    <ImageView
+        android:id="@+id/menu_iv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="1.5dp"
+        android:background="@mipmap/bg_menu"
+        android:scaleType="centerInside" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="51.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toLeftOf="@id/menu_iv"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50.5dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="7dp"
+                android:drawableTop="@drawable/btn_tab_home_selector"
+                android:gravity="center"
+                android:paddingTop="7dp"
+                android:selectAllOnFocus="true"
+                android:text="首页"
+                android:textColor="@drawable/btn_tab_text_selector"
+                android:textSize="10sp" />
+
+            <TextView
+                android:id="@+id/life"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="7dp"
+                android:drawableTop="@drawable/btn_tab_life_selector"
+                android:gravity="center"
+                android:paddingTop="7dp"
+                android:layout_marginRight="9dp"
+                android:text="优选生活"
+                android:textColor="@drawable/btn_tab_text_selector"
+                android:textSize="10sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="51.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_toRightOf="@id/menu_iv"
+        android:orientation="vertical">
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#eeeeee"/>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="50.5dp"
+            android:background="@color/white"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp"
+            android:paddingTop="2dp"
+            android:weightSum="2">
+
+            <TextView
+                android:id="@+id/lin"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="7dp"
+                android:drawableTop="@drawable/btn_tab_linli_selector"
+                android:gravity="center"
+                android:paddingTop="7dp"
+                android:layout_marginLeft="9dp"
+                android:text="邻里圈"
+                android:textColor="@drawable/btn_tab_text_selector"
+                android:textSize="10dp" />
+
+            <TextView
+                android:id="@+id/manager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:drawablePadding="7dp"
+                android:drawableTop="@drawable/btn_tab_guanjia_selector"
+                android:gravity="center"
+                android:paddingTop="7dp"
+                android:text="贴心管家"
+                android:textColor="@drawable/btn_tab_text_selector"
+                android:textSize="10dp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</RelativeLayout>

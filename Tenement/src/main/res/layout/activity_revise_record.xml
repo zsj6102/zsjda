@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <include
+        android:id="@+id/base"
+        layout="@layout/base_toolbar"></include>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:scrollbars="none">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line2"/>
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:orientation="horizontal"
+                    >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginLeft="15dp"
+                        android:layout_gravity="center"
+                        android:textSize="14sp"
+                        android:text="打点时间："/>
+
+                    <TextView
+                        android:id="@+id/tv_date"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:layout_gravity="center"
+                        android:layout_marginRight="12dp"
+                        android:textSize="14sp"
+                        />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line2"/>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/line2"/>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="44dp"
+                    android:gravity="center">
+
+                    <TextView
+                        android:id="@+id/tv"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginLeft="15dp"
+                        android:textSize="14sp"
+                        android:text="打点地点："/>
+
+                    <TextView
+                        android:id="@+id/tv_address"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="12dp"
+                        android:layout_toRightOf="@+id/tv"
+                        android:layout_alignTop="@+id/tv"
+                        android:textSize="14sp"
+                        android:layout_toEndOf="@+id/tv"
+                        android:layout_alignParentRight="true"/>
+                </RelativeLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="1dp"
+                    android:background="@color/line2"/>
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="工作任务情况"
+                    android:layout_marginLeft="15dp"
+                    android:textSize="14sp"
+                    android:layout_marginTop="10dp"/>
+
+                <EditText
+                    android:id="@+id/edt_explain"
+                    android:layout_marginTop="5dp"
+                    style="@style/UploadHeaderEditTextStyle" />
+
+                <com.property.colpencil.colpencilandroidlibrary.Ui.ColpencilGridView
+                    android:id="@+id/item_greenclean_gridview"
+                    android:layout_marginTop="10dp"
+                    style="@style/CleanRecordItemGridViewStyle">
+
+                </com.property.colpencil.colpencilandroidlibrary.Ui.ColpencilGridView>
+
+                <Button
+                    android:id="@+id/btn_change"
+                    android:layout_width="150dp"
+                    android:layout_height="40dp"
+                    android:background="@drawable/rect_blue"
+                    android:layout_marginBottom="30dp"
+                    android:layout_gravity="center"
+                    android:text="确认修改"
+                    android:textColor="@color/white"
+                    android:textSize="@dimen/text_size15" />
+            </LinearLayout>
+
+
+    </ScrollView>
+</LinearLayout>

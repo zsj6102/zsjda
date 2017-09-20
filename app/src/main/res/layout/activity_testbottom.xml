@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ececec"
+    tools:context="com.colpencil.propertycloud.View.Activitys.Test.TestBottomActivity">
+
+    <com.property.colpencil.colpencilandroidlibrary.Ui.ColBottomNavigation.ColBottomNavigationViewPager
+        android:id="@+id/hostactivity_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.property.colpencil.colpencilandroidlibrary.Ui.ColBottomNavigationSuper.BottomNavigationBar
+        android:id="@+id/bottom_navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"/>
+    <!--app:bnbAutoHideEnabled="false"/>-->
+
+
+</android.support.design.widget.CoordinatorLayout>

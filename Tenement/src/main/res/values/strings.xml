@@ -1,0 +1,33 @@
+<resources>
+    <string name="app_name">智慧物业</string>
+
+    <string name="tab_1">工作台</string>
+    <string name="tab_2">在线对讲</string>
+    <string name="tab_3">今日任务</string>
+    <string name="tab_4">我的家庭</string>
+
+    <string name="home_manger">大爱齐家物业</string>
+    <string name="online_talk">在线对讲</string>
+    <string name="online_title">发起对讲</string>
+    <string name="online_content">是否发起对讲？</string>
+    <string name="online_yes">是</string>
+    <string name="online_no">否</string>
+    <string name="today_task_title">今日任务</string>
+    <string name="equipment">今日保养设备数：</string>
+    <string name="start_keep">开始保养</string>
+    <string name="title_scanCode">二维码/条码</string>
+    <string name="right_scanCode">查看历史</string>
+    <string name="scanCode_open">开灯</string>
+    <string name="scanCode_close">关灯</string>
+    <string name="position_tv">我的位置</string>
+    <string name="cleaning_record">保洁记录</string>
+    <string name="patrol_record">巡逻记录</string>
+    <string name="upload_clean">绿化保洁工作汇报</string>
+    <string name="upload_patrol">上传巡逻工作汇报</string>
+    <string name="owner_repair_title">公共报修记录</string>
+    <string name="left_recorddetails">全部楼宇</string>
+    <string name="right_recorddetails">全部房间</string>
+    <string name="title_writeWatermeter">开始抄表</string>
+    <string name="title_owner_repair">所有小区</string>
+
+</resources>

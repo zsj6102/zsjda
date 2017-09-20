@@ -1,0 +1,59 @@
+apply plugin: 'com.android.library'
+
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+
+}
+
+dependencies {
+    compile fileTree( dir: 'libs', include: ['*.jar'] )
+    //, exclude:['tbs_sdk_v1.5.1.1069_25451_obfs_20160510_174630.jar']
+    testCompile testingDependencies.junit
+    compile supportDependencies.appCompat
+    compile toolDependencies.butterknife
+    compile toolDependencies.toolsfinal
+    compile rxDependencies.rxandroid
+    compile rxDependencies.rxjava
+    compile retrofitDependencies.retrofit
+//    compile toolDependencies.andfix
+    compile nineoldandroidsDependencies.library
+    compile topsnackbarDependencies.topsnackbar
+    compile okHttpDependencies.loggingInterceptor
+    compile retrofitDependencies.converterGson
+    compile retrofitDependencies.adapterRxjava
+    compile supportDependencies.design
+    compile supportDependencies.supportV4
+    compile supportDependencies.recyclerviewV7
+    compile glideDependencies.glide
+    compile bgaBannerDependencies.bgaBanner
+    compile bgaAdapterDependencies.bgaAdapter
+    compile cardviewDependencies.cardview
+    compile retrofitDependencies.PersistentCookieJar
+    compile toolDependencies.core
+    compile toolDependencies.superadapter
+    compile bgaBannerDependencies.bgabadgeview
+    compile toolDependencies.timeselector
+    compile toolDependencies.circleimageview
+    compile files('libs/universal-image-loader-1.9.5.jar')
+//   provided files('../../h52/libs/tbs_sdk_v1.5.1.1069_25451_obfs_20160510_174630.jar')
+    compile 'com.github.wangjiegulu:ShadowViewHelper:1.0.1'
+    compile 'com.squareup.retrofit2:converter-scalars:2.0.0'
+    compile 'com.baoyz.actionsheet:library:1.1.7'
+    compile 'com.umeng.analytics:analytics:latest.integration'
+}

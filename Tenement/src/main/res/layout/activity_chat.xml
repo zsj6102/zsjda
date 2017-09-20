@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <include layout="@layout/base_toolbar"
+        android:id="@+id/base"/>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_below="@+id/base"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true">
+
+        <ListView
+            android:id="@+id/chat_listview"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:cacheColorHint="#00000000"
+            android:divider="@null"
+            android:dividerHeight="3dp"
+            android:scrollbarStyle="outsideOverlay"
+            android:transcriptMode="normal" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="#7fd8d8d8" />
+
+        <org.kymjs.chat.widget.KJChatKeyboard
+            android:id="@+id/chat_msg_input_box"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/ll_messgae"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_below="@+id/base"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginRight="15dp"
+        android:background="@drawable/rect_all_whrite">
+
+        <TextView
+            android:id="@+id/own_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="业主姓名：书戏"
+            android:textSize="@dimen/text_size13"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="15dp"
+            android:textColor="@color/text_drak2"/>
+
+        <TextView
+            android:id="@+id/own_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="业主联系电话：1528026329"
+            android:textSize="@dimen/text_size13"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_drak2"/>
+
+        <TextView
+            android:id="@+id/own_number"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="业主房号：432"
+            android:textSize="@dimen/text_size13"
+            android:layout_marginLeft="12dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginBottom="15dp"
+            android:textColor="@color/text_drak2"/>
+    </LinearLayout>
+
+
+</RelativeLayout>

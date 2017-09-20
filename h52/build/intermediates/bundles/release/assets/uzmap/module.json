@@ -1,0 +1,19 @@
+{modules:[{
+    name:'model',
+    class:'com.uzmap.pkg.uzmodules.uzmcm.UzMCM'
+}
+,{
+    name:'mam',
+    class:'com.uzmap.pkg.uzmodules.uzmam.UzMAM'
+}
+,{
+    name:'wxPay',
+    class:'com.uzmap.pkg.uzmodules.uzWxPay.UzWxPay'
+}
+,{
+	name:'aliPay',
+	class:'com.uzmap.pkg.uzmodules.uzAlipay.UzAlipayActivity'
+}
+,{name:'MyUZModule',class:'com.sdk.samples.MyUZModule'}
+
+]}

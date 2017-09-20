@@ -1,0 +1,77 @@
+apply plugin: 'com.android.application'
+apply plugin: 'com.neenbedankt.android-apt' // 注释处理
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        applicationId "com.colpencil.propertycloud"
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 17
+        versionName "1.3.5"
+        // Enabling multidex support.
+        multiDexEnabled true
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86"
+        }
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+
+    dexOptions {
+        incremental true
+        javaMaxHeapSize "4g"
+    }
+
+    //防止不同jar包或者 so文件方法重复问题
+    packagingOptions {
+        exclude 'META-INF/DEPENDENCIES'
+        exclude 'META-INF/NOTICE'
+        exclude 'META-INF/LICENSE'
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+        exclude 'META-INF/services/javax.annotation.processing.Processor'
+    }
+
+}
+
+
+dependencies {
+    compile 'com.android.support:multidex:1.0.1'
+    compile fileTree(include: ['*.jar'], dir: 'libs')
+    testCompile testingDependencies.junit
+    compile project(':Libraries:ColpencilAndroidLibrary')
+    compile project(':h52')
+    compile project(':Libraries:whiteboardlib')
+    //下面是内存泄漏工具引用
+    debugCompile toolDependencies.leakcanaryAndroid
+    releaseCompile toolDependencies.leakcanaryAndroidNoOp
+    testCompile toolDependencies.leakcanaryAndroidNoOp
+    compile toolDependencies.annotation
+    compile 'com.lzy.widget:imagepicker:0.3.2'
+    //指定版本
+    //    compile 'top.zibin:Luban:1.0.8'
+    compile 'com.jph.takephoto:takephoto_library:4.0.2'
+    compile 'me.shaohui.advancedluban:library:1.2.8'
+    compile 'com.orhanobut:dialogplus:1.11@aar'
+    compile 'com.google.zxing:core:3.2.1'
+    compile 'cn.bingoogolapple:bga-qrcodecore:1.1.5@aar'
+    compile 'cn.bingoogolapple:bga-zxing:1.1.5@aar'
+    compile 'info.hoang8f:android-segmented:1.0.6'
+    compile files('libs/alipaySdk-20160223.jar')
+    compile files('libs/lling_library_v1.0.jar')
+    compile 'com.skyfishjy.ripplebackground:library:1.0.1'
+    compile 'com.zhy:okhttputils:2.6.2'
+    compile files('libs/jcore-android_v1.0.0.jar')
+    compile 'com.youth.banner:banner:1.4.4'
+    compile 'com.romandanylyk:pageindicatorview:0.0.9'
+    //最新版本
+    //    compile 'com.alipay.euler:andfix:0.5.0@aar'
+    compile files('libs/lling_open_api_v5.2.4.jar')
+}

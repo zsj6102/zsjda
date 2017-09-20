@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Libraries/ColpencilAndroidLibrary/ColpencilAndroidLibrary.iml" filepath="$PROJECT_DIR$/Libraries/ColpencilAndroidLibrary/ColpencilAndroidLibrary.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Libraries/Libraries.iml" filepath="$PROJECT_DIR$/Libraries/Libraries.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Tenement/Tenement.iml" filepath="$PROJECT_DIR$/Tenement/Tenement.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/daqj.iml" filepath="$PROJECT_DIR$/daqj.iml" />
+      <module fileurl="file://$PROJECT_DIR$/h52/h52.iml" filepath="$PROJECT_DIR$/h52/h52.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Libraries/library/library.iml" filepath="$PROJECT_DIR$/Libraries/library/library.iml" />
+      <module fileurl="file://$PROJECT_DIR$/Libraries/whiteboardlib/whiteboardlib.iml" filepath="$PROJECT_DIR$/Libraries/whiteboardlib/whiteboardlib.iml" />
+    </modules>
+  </component>
+</project>

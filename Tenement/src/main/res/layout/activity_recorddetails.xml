@@ -1,0 +1,88 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/main_backgroud"
+    android:orientation="vertical">
+
+    <!--<include layout="@layout/recorddetails_toolbar"/>-->
+
+    <include layout="@layout/base_toolbar"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:paddingBottom="11dp"
+        android:paddingLeft="12dp"
+        android:paddingRight="12dp"
+        android:paddingTop="11dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="本月已抄表个数"
+            android:textColor="@color/color_a4a4a4"
+            android:textSize="@dimen/text_size13" />
+
+        <TextView
+            android:id="@+id/has_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   "
+            android:textColor="@color/color_ffb008"
+            android:textSize="@dimen/text_size13" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个，本月未抄表个数"
+            android:textColor="@color/color_a4a4a4"
+            android:textSize="@dimen/text_size13" />
+
+        <TextView
+            android:id="@+id/none_record"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="   "
+            android:textColor="@color/color_ffb008"
+            android:textSize="@dimen/text_size13" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="个"
+            android:textColor="@color/color_a4a4a4"
+            android:textSize="@dimen/text_size13" />
+    </LinearLayout>
+
+    <android.support.v4.widget.SwipeRefreshLayout
+        android:id="@+id/bga_recorddetails"
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.property.colpencil.colpencilandroidlibrary.Ui.RecylerView.AutoLoadRecylerView
+            android:id="@+id/list_recorddetails"
+            android:layout_width="match_parent"
+            android:layout_marginBottom="10dp"
+            android:layout_height="match_parent" />
+    </android.support.v4.widget.SwipeRefreshLayout>
+
+
+    <include layout="@layout/loading_view_layout" />
+
+    <include layout="@layout/empty_view_layout" />
+
+    <include layout="@layout/error_view_layout" />
+
+    <TextView
+        android:id="@+id/tv_gotoAction"
+        android:layout_width="match_parent"
+        android:layout_height="44dp"
+        android:background="@color/text_orange"
+        android:gravity="center"
+        android:text="开始抄表"
+        android:textColor="@color/white"
+        android:textSize="@dimen/text_size18" />
+</LinearLayout>

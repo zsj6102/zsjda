@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Material DEFAULT colors -->
+    <color name="material_drawer_primary">#81C784</color>
+
+    <color name="white">#FFFFFFFF</color>
+    <color name="background_color">#FF5E5B94</color>
+    <color name="tabbar_main">#FF4AD5BC</color>
+    <color name="tabbar_secondly">#FF54B4B4</color>
+    <color name="text_gray_color">#A5A5A5</color>
+    <color name="transparent">#7f000000</color>
+
+    <color name="retry_button_background">#30000000</color>
+    <color name="retry_button_background_stroke">#50000000</color>
+
+    <color name="gf_message_chat_list_msg_bg">#F1F1F1</color>
+    <!-- 导航栏-->
+    <color name="colorBottomNavigationPrimary">#3F51B5</color>
+    <color name="colorBottomNavigationPrimaryDark">#303F9F</color>
+    <color name="colorBottomNavigationAccent">#FF4081</color>
+    <color name="colorBottomNavigationInactive">#747474</color>
+    <color name="colorBottomNavigationActiveColored">#FFFFFF</color>
+    <color name="colorBottomNavigationInactiveColored">#50FFFFFF</color>
+    <color name="colorBottomNavigationNotification">#F63D2B</color>
+
+
+    <!--自定义键盘-->
+    <color name="app_style">#03233b</color>
+    <color name="txt_orange">#ff6800</color>
+    <color name="color_d8dbdf">#d8dbdf</color>
+    <color name="keyboard_blackground">#bababa</color>
+    <color name="black">#000</color>
+    <color name="product_list_bac">#efeef4</color>
+    <color name="color_3c3c3c">#3c3c3c</color>
+    <color name="color_999999">#999999</color>
+    <color name="color_1a98ff">#1a98ff</color>
+    <!--数字密码-->
+    <drawable name="key_normal_color">#fcfcfc</drawable>
+    <drawable name="key_selected_color">#b8bcc0</drawable>
+    <drawable name="opkey_selected_color">#cbcfd5</drawable>
+    <drawable name="keyboard_bg_color">#acb3b6</drawable>
+
+    <color name="material_black55">#8c000000</color>
+    <!--背景颜色-->
+    <color name="main_backgroud">#fafafa</color>
+    <color name="main_text_800">#424242</color>
+
+    <!--覆盖颜色-->
+    <color name="bgColor_overlay">#60000000</color>
+    <color name="bgColor_overlay_black">#95000000</color>
+    <!--窗口背景颜色-->
+    <color name="bgColor_svprogressdefaultview">@android:color/white</color>
+    <!--标题颜色-->
+    <color name="textColor_svprogresshuddefault_msg">#000000</color>
+    <color name="roundColor_svprogresshuddefault">#e5e5e5</color>
+    <color name="roundProgressColor_svprogresshuddefault">@android:color/black</color>
+</resources>
